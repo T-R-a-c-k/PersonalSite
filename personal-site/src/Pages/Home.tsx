@@ -1,5 +1,5 @@
 import React from "react";
-import "../css/home.module.css";
+import Styles from "../css/home.module.css";
 
 export interface HomeProps {
   interval: number;
@@ -37,7 +37,12 @@ const Home: React.FunctionComponent<HomeProps> = ({ interval }) => {
     return sentence.length === timesBetween.length ? (
       sentence.map((word, index) => {
         return (
-          <span hidden={setVisibility(timesBetween[index])}>{word + " "}</span>
+          <span
+            className={Styles.greeting}
+            hidden={setVisibility(timesBetween[index])}
+          >
+            {word + " "}
+          </span>
         );
       })
     ) : (
@@ -47,8 +52,17 @@ const Home: React.FunctionComponent<HomeProps> = ({ interval }) => {
 
   return (
     <React.Fragment>
-      <h1 className="text-3xl font-bold underline">{timer.milliseconds}</h1>
-      <div>{buildSpan(greetingSentence, greetingTimes)}</div>
+      <div id={Styles.pageContainer}>
+        <h1 className="text-3xl font-bold underline">{timer.milliseconds}</h1>
+        <div className={Styles.greetingContainer}>
+          {buildSpan(greetingSentence, greetingTimes)}
+        </div>
+        <div className={Styles.screen}>
+          <div className={Styles.screenImage}></div>
+          <div className={Styles.screenOverlay}></div>
+          <div className={Styles.screenContent}>Github: T-R-a-c-k</div>
+        </div>
+      </div>
     </React.Fragment>
   );
 };
