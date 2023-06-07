@@ -1,4 +1,5 @@
 import React from "react";
+import Profile from "../components/profile";
 import Styles from "../css/home.module.css";
 
 export interface HomeProps {
@@ -57,11 +58,7 @@ const Home: React.FunctionComponent<HomeProps> = ({ interval }) => {
         <div className={Styles.greetingContainer}>
           {buildSpan(greetingSentence, greetingTimes)}
         </div>
-        <div className={Styles.screen}>
-          <div className={Styles.screenImage}></div>
-          <div className={Styles.screenOverlay}></div>
-          <div className={Styles.screenContent}>Github: T-R-a-c-k</div>
-        </div>
+        <Profile />
       </div>
     </React.Fragment>
   );
