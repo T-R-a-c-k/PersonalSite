@@ -34,7 +34,7 @@ const Home: React.FunctionComponent<HomeProps> = ({ interval }) => {
   };
 
   const buildSpan = (sentence: Array<string>, timesBetween: Array<number>) => {
-    console.log(sentence.length, timesBetween.length);
+    //console.log(sentence.length, timesBetween.length);
     return sentence.length === timesBetween.length ? (
       sentence.map((word, index) => {
         return (
@@ -53,6 +53,7 @@ const Home: React.FunctionComponent<HomeProps> = ({ interval }) => {
 
   return (
     <React.Fragment>
+      <div className={Styles.pageContainerImage}></div>
       <div id={Styles.pageContainer}>
         <h1 className="text-3xl font-bold underline">{timer.milliseconds}</h1>
         <div className={Styles.greetingContainer}>
