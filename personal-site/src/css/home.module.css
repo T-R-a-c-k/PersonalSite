@@ -1,6 +1,6 @@
 #pageContainer {
   width: 100%;
-  height: 100%;
+  min-height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -18,13 +18,16 @@
   background-repeat: no-repeat;
   background-size: 100%;
   width: 100%;
-  height: 100%;
+  min-height: 100%;
   filter: contrast(150%);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .greetingContainer {
   width: 30%;
-  height: 30vh;
+  min-height: 30vh;
 }
 
 .greeting {
