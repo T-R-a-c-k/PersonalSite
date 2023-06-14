@@ -1,6 +1,6 @@
 import Styles from "../css/profile.module.css";
 
-interface ProjectsProps {}
+type ProjectsProps = {};
 
 const Projects: React.FunctionComponent<ProjectsProps> = () => {
   return (

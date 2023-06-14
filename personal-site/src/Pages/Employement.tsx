@@ -1,6 +1,6 @@
 import Styles from "../css/profile.module.css";
 
-interface EmploymentProps {}
+type EmploymentProps = {};
 
 const Employment: React.FunctionComponent<EmploymentProps> = () => {
   return (

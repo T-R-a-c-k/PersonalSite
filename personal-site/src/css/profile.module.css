@@ -126,6 +126,52 @@
   overflow-wrap: break-word;
 }
 
+.educationLink {
+  position: absolute;
+  top: 0%;
+  left: 29.5%;
+}
+
+.employementLink {
+  position: absolute;
+  left: 22.5%;
+  top: 23%;
+}
+
+.projectLink {
+  position: absolute;
+  left: 60.5%;
+  top: 51%;
+}
+
+.technicalSkillLink {
+  position: absolute;
+  left: 51%;
+  top: 17%;
+}
+
+#rotator > p {
+  color: red;
+  animation: inherit;
+  animation-direction: reverse;
+}
+
+#rotator {
+  position: relative;
+  width: 6rem;
+  height: 6rem;
+  animation: rotations 30s linear infinite;
+  border: 1px orange dashed;
+  border-radius: 50%;
+  margin: 3rem;
+}
+
+@keyframes rotations {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 @keyframes pan-overlay {
   from {
     top: -100%;
@@ -240,6 +286,16 @@
   .barLeft {
     width: 80%;
   }
+  .barRight {
+    min-width: 100%;
+    height: 400px;
+  }
+
+  .barRightImage {
+    width: 100%;
+    min-height: 1 00%;
+  }
+
   .barRightItemHeading > p {
     padding-left: 5%;
     padding-right: 5%;
@@ -305,5 +361,11 @@
   }
   100% {
     filter: contrast(150%);
+  }
+}
+
+@keyframes orbit {
+  100% {
+    transform: rotate(360deg);
   }
 }

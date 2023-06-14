@@ -6,7 +6,7 @@ import Employment from "./Pages/Employement";
 import Projects from "./Pages/Projects";
 import TechnicalSkills from "./Pages/TechnicalSkills";
 
-export interface IAppProps {}
+export type IAppProps = {};
 
 const App: React.FunctionComponent<IAppProps> = (props) => {
   return (

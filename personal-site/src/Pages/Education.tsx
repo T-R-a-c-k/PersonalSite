@@ -1,6 +1,6 @@
 import Styles from "../css/profile.module.css";
 
-interface EducationProps {}
+type EducationProps = {};
 
 const Education: React.FunctionComponent<EducationProps> = () => {
   return (

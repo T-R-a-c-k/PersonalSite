@@ -1,6 +1,6 @@
 import Styles from "../css/profile.module.css";
 
-interface TechnicalSkillsProps {}
+type TechnicalSkillsProps = {};
 
 const TechnicalSkills: React.FunctionComponent<TechnicalSkillsProps> = () => {
   return (

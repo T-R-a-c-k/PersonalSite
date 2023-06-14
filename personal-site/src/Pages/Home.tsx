@@ -1,12 +1,12 @@
 import React from "react";
 import Profile from "../components/profile";
 import Styles from "../css/home.module.css";
-import { Timer } from "../interfaces/timer";
+import { Timer } from "../types/timer";
 import { setVisibility } from "../functions/setVisibility";
 
-export interface HomeProps {
+export type HomeProps = {
   interval: number;
-}
+};
 
 const Home: React.FunctionComponent<HomeProps> = ({ interval }) => {
   const [timer, setTimer] = React.useState<Timer>({ milliseconds: 0 });
