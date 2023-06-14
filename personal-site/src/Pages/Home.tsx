@@ -1,12 +1,11 @@
 import React from "react";
 import Profile from "../components/profile";
 import Styles from "../css/home.module.css";
+import { Timer } from "../interfaces/timer";
+import { setVisibility } from "../functions/setVisibility";
 
 export interface HomeProps {
   interval: number;
-}
-interface Timer {
-  milliseconds: number;
 }
 
 const Home: React.FunctionComponent<HomeProps> = ({ interval }) => {
@@ -29,10 +28,6 @@ const Home: React.FunctionComponent<HomeProps> = ({ interval }) => {
     }, 10);
   }, [timer.milliseconds, interval]);
 
-  const setVisibility = (threshold: number) => {
-    return threshold >= timer.milliseconds ? true : false;
-  };
-
   const buildSpan = (sentence: Array<string>, timesBetween: Array<number>) => {
     //console.log(sentence.length, timesBetween.length);
     return sentence.length === timesBetween.length ? (
@@ -40,7 +35,7 @@ const Home: React.FunctionComponent<HomeProps> = ({ interval }) => {
         return (
           <span
             className={Styles.greeting}
-            hidden={setVisibility(timesBetween[index])}
+            hidden={setVisibility(timesBetween[index], timer)}
           >
             {word + " "}
           </span>
