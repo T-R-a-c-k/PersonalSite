@@ -126,28 +126,11 @@
   overflow-wrap: break-word;
 }
 
-.educationLink {
-  position: absolute;
-  top: 0%;
-  left: 29.5%;
-}
-
-.employementLink {
-  position: absolute;
-  left: 22.5%;
-  top: 23%;
-}
-
-.projectLink {
-  position: absolute;
-  left: 60.5%;
-  top: 51%;
-}
-
+.educationLink,
+.employementLink,
+.projectLink,
 .technicalSkillLink {
   position: absolute;
-  left: 51%;
-  top: 17%;
 }
 
 #rotator > p {
