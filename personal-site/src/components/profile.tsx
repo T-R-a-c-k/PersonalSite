@@ -3,8 +3,20 @@ import { Link } from "react-router-dom";
 import Styles from "../css/profile.module.css";
 import { changeLetters } from "../functions/changeLetters";
 import Draggable from "react-draggable";
+import { link } from "fs";
 
 interface ProfileProps {}
+
+const fixRotators = () => {
+  const links = document.querySelectorAll("a");
+  let rotators = Array.from(links);
+  rotators = rotators.filter((element) => {
+    return element.className.includes("profile_");
+  });
+  rotators.forEach((element) => {
+    element.style.left = "3%";
+  });
+};
 
 const Profile: React.FunctionComponent<ProfileProps> = () => {
   const [windowSize, setWindowSize] = useState<Array<number>>([
@@ -19,14 +31,17 @@ const Profile: React.FunctionComponent<ProfileProps> = () => {
 
     window.addEventListener("resize", handleWindowResize);
 
+    fixRotators();
     return () => {
       window.removeEventListener("resize", handleWindowResize);
     };
   }, []);
 
+  //Height should be about 1.7~ times bigger than width
+  //This allows every configuration to keep the picture within the parent
   const boundValues = {
-    left: (-1 * windowSize[0]) / 2,
-    top: (-1 * windowSize[1]) / 2,
+    left: -1 * windowSize[0] + windowSize[0] / 3,
+    top: (-1 * windowSize[0] + windowSize[0] / 3) / 1.7,
     right: -5,
     bottom: 0,
   };
@@ -55,7 +70,7 @@ const Profile: React.FunctionComponent<ProfileProps> = () => {
           </div>
         </div>
         <div className={Styles.barRight}>
-          <Draggable bounds={boundValues} disabled={windowSize[0] < 800}>
+          <Draggable bounds={boundValues} disabled={windowSize[0] <= 800}>
             <div className={Styles.barRightImage}>
               <div>
                 <h2>Width: {boundValues.left}</h2>

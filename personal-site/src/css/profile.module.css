@@ -19,7 +19,7 @@
 }
 
 .screen > .screenImage {
-  background-image: url("https://i.pinimg.com/originals/2d/4d/d1/2d4dd15c8b5bcbfbd062f6ec08eaf60d.jpg");
+  background-image: url("E:\repos 2\real-projects\PersonalSite\personal-site\src\images\odst.jpg");
   position: absolute;
   min-height: 100%;
   width: 100%;
@@ -76,7 +76,7 @@
 
 .barRightImage {
   position: relative;
-  background-image: url("https://img001.prntscr.com/file/img001/JbHsKczJQ2ezlqb5by_vnQ.png");
+  background-image: url("E:\repos 2\real-projects\PersonalSite\personal-site\src\images\link-galaxy.jpg");
   background-repeat: no-repeat;
   width: 200%;
   min-height: 200%;
@@ -293,7 +293,7 @@
 
   .barRightImage {
     width: 100%;
-    min-height: 1 00%;
+    min-height: 100%;
   }
 
   .barRightItemHeading > p {
@@ -317,14 +317,12 @@
 }
 
 @keyframes barRightImage-pan {
-  0% {
-    filter: contrast(150%);
+  from,
+  to {
+    filter: contrast(125%);
   }
   50% {
-    filter: contrast(250%);
-  }
-  100% {
-    filter: contrast(150%);
+    filter: contrast(175%);
   }
 }
 
