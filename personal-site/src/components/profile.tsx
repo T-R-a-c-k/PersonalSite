@@ -3,54 +3,17 @@ import { Link } from "react-router-dom";
 import Styles from "../css/profile.module.css";
 import { changeLetters } from "../functions/changeLetters";
 import Draggable from "react-draggable";
+import { fixRotators } from "../functions/fixRotators";
+import {
+  ROTATOR_LINK_DISPLACEMENT_PC,
+  ROTATOR_LINK_DISPLACEMENT_Phone,
+  ROTATOR_LINK_DISPLACEMENT_Phone_Small,
+  ROTATOR_LINK_DISPLACEMENT_Tablet,
+  ROTATOR_LINK_DISPLACEMENT_Tablet_Small,
+} from "../layouts/profileStars";
 
 interface ProfileProps {}
-
-type Displacement = {
-  top: number;
-  left: number;
-};
-
-const educationDisplacement: Displacement = {
-  top: 10.4,
-  left: 29.3,
-};
-
-const employementDisplacement: Displacement = {
-  top: 38.2,
-  left: 35.8,
-};
-
-const projectDisplacement: Displacement = {
-  top: 67.5,
-  left: 48,
-};
-
-const technicalSkillsDisplacement: Displacement = {
-  top: 27,
-  left: 74.3,
-};
-
-const ROTATOR_LINK_DISPLACEMENT: Array<Displacement> = [
-  educationDisplacement,
-  employementDisplacement,
-  projectDisplacement,
-  technicalSkillsDisplacement,
-];
-
-const fixRotators = () => {
-  const BASE_SIZE = -750;
-  const links = document.querySelectorAll("a");
-  let rotatorLinks = Array.from(links);
-  rotatorLinks = rotatorLinks.filter((element) => {
-    return element.className.includes("Link");
-  });
-
-  rotatorLinks.forEach((element, index) => {
-    element.style.top = `${ROTATOR_LINK_DISPLACEMENT[index].top}%`;
-    element.style.left = `${ROTATOR_LINK_DISPLACEMENT[index].left}%`;
-  });
-};
+const SCREEN_SIZES = [300, 500, 800, 1023];
 
 const Profile: React.FunctionComponent<ProfileProps> = () => {
   const [windowSize, setWindowSize] = useState<Array<number>>([
@@ -65,7 +28,26 @@ const Profile: React.FunctionComponent<ProfileProps> = () => {
 
     window.addEventListener("resize", handleWindowResize);
 
-    fixRotators();
+    //Location of the orbits by width of the screen
+    switch (true) {
+      case windowSize[0] < SCREEN_SIZES[0]:
+        fixRotators(ROTATOR_LINK_DISPLACEMENT_Phone_Small, windowSize);
+        break;
+      case windowSize[0] < SCREEN_SIZES[1]:
+        fixRotators(ROTATOR_LINK_DISPLACEMENT_Phone, windowSize);
+        break;
+      case windowSize[0] < SCREEN_SIZES[2]:
+        fixRotators(ROTATOR_LINK_DISPLACEMENT_Tablet_Small, windowSize);
+        break;
+
+      case windowSize[0] < SCREEN_SIZES[3]:
+        fixRotators(ROTATOR_LINK_DISPLACEMENT_Tablet, windowSize);
+        break;
+
+      default:
+        fixRotators(ROTATOR_LINK_DISPLACEMENT_PC, windowSize);
+    }
+
     return () => {
       window.removeEventListener("resize", handleWindowResize);
     };
@@ -74,7 +56,7 @@ const Profile: React.FunctionComponent<ProfileProps> = () => {
   //Height should be about 1.7~ times bigger than width
   //This allows every configuration to keep the picture within the parent
   const leftBound = -1 * windowSize[0] + windowSize[0] / 3;
-  const topBound = (-1 * windowSize[0] + windowSize[0] / 3) / 1.7;
+  const topBound = -1 * windowSize[1] + windowSize[1] / 3;
   const boundValues = {
     left: leftBound,
     top: topBound,
@@ -108,7 +90,7 @@ const Profile: React.FunctionComponent<ProfileProps> = () => {
         <div className={Styles.barRight}>
           <Draggable
             bounds={boundValues}
-            disabled={windowSize[0] <= 800}
+            disabled={windowSize[0] <= 1023}
             cancel="a"
           >
             <div className={Styles.barRightImage}>
