@@ -310,38 +310,32 @@
 }
 
 @-moz-keyframes barRightImage-pan {
-  0% {
-    filter: contrast(150%);
+  from,
+  to {
+    filter: contrast(125%);
   }
   50% {
-    filter: contrast(250%);
-  }
-  100% {
-    filter: contrast(150%);
+    filter: contrast(175%);
   }
 }
 
 @-webkit-keyframes barRightImage-pan {
-  0% {
-    filter: contrast(150%);
+  from,
+  to {
+    filter: contrast(125%);
   }
   50% {
-    filter: contrast(250%);
-  }
-  100% {
-    filter: contrast(150%);
+    filter: contrast(175%);
   }
 }
 
 @-ms-keyframes barRightImage-pan {
-  0% {
-    filter: contrast(150%);
+  from,
+  to {
+    filter: contrast(125%);
   }
   50% {
-    filter: contrast(250%);
-  }
-  100% {
-    filter: contrast(150%);
+    filter: contrast(175%);
   }
 }
 

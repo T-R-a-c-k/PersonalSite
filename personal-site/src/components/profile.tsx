@@ -31,21 +31,21 @@ const Profile: React.FunctionComponent<ProfileProps> = () => {
     //Location of the orbits by width of the screen
     switch (true) {
       case windowSize[0] < SCREEN_SIZES[0]:
-        fixRotators(ROTATOR_LINK_DISPLACEMENT_Phone_Small, windowSize);
+        fixRotators(ROTATOR_LINK_DISPLACEMENT_Phone_Small);
         break;
       case windowSize[0] < SCREEN_SIZES[1]:
-        fixRotators(ROTATOR_LINK_DISPLACEMENT_Phone, windowSize);
+        fixRotators(ROTATOR_LINK_DISPLACEMENT_Phone);
         break;
       case windowSize[0] < SCREEN_SIZES[2]:
-        fixRotators(ROTATOR_LINK_DISPLACEMENT_Tablet_Small, windowSize);
+        fixRotators(ROTATOR_LINK_DISPLACEMENT_Tablet_Small);
         break;
 
       case windowSize[0] < SCREEN_SIZES[3]:
-        fixRotators(ROTATOR_LINK_DISPLACEMENT_Tablet, windowSize);
+        fixRotators(ROTATOR_LINK_DISPLACEMENT_Tablet);
         break;
 
       default:
-        fixRotators(ROTATOR_LINK_DISPLACEMENT_PC, windowSize);
+        fixRotators(ROTATOR_LINK_DISPLACEMENT_PC);
     }
 
     return () => {
