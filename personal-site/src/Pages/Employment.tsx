@@ -1,7 +1,7 @@
 import Styles from "../css/employment.module.css";
 import { warpEffect } from "../functions/warpEffect";
 import { useEffect } from "react";
-import { ROTATOR_EDUCATION_LINK_DISPLACEMENT_PC } from "../layouts/employmentStars";
+import { ROTATOR_EMPLOYMENT_LINK_DISPLACEMENT_PC } from "../layouts/employmentStars";
 import { fixRotators } from "../functions/fixRotators";
 
 type EmploymentProps = {};
@@ -9,7 +9,7 @@ type EmploymentProps = {};
 const Employment: React.FunctionComponent<EmploymentProps> = () => {
   useEffect(() => {
     warpEffect();
-    fixRotators(ROTATOR_EDUCATION_LINK_DISPLACEMENT_PC);
+    fixRotators(ROTATOR_EMPLOYMENT_LINK_DISPLACEMENT_PC);
   }, []);
   return (
     <>

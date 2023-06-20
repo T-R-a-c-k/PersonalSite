@@ -1,24 +1,24 @@
 import { Displacement } from "../types/displacement";
 
 const starOneDisplacement_PC: Displacement = {
-  top: 37.8,
-  left: 33,
+  top: 43,
+  left: 49,
 };
 
 const starTwoDisplacement_PC: Displacement = {
-  top: 5,
-  left: 43,
+  top: 35,
+  left: 18,
 };
 
 const starThreeDisplacement_PC: Displacement = {
-  top: 45,
-  left: 63,
+  top: 25.5,
+  left: 63.5,
 };
 
-const ROTATOR_EMPLOYMENT_LINK_DISPLACEMENT_PC: Array<Displacement> = [
+const ROTATOR_PROJECTS_LINK_DISPLACEMENT_PC: Array<Displacement> = [
   starOneDisplacement_PC,
   starTwoDisplacement_PC,
   starThreeDisplacement_PC,
 ];
 
-export { ROTATOR_EMPLOYMENT_LINK_DISPLACEMENT_PC };
+export { ROTATOR_PROJECTS_LINK_DISPLACEMENT_PC };

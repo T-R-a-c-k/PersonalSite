@@ -10,7 +10,7 @@ canvas {
   z-index: 0;
 }
 
-.educationBackground {
+.projectsBackground {
   position: absolute;
   background-image: url("E:\repos 2\real-projects\PersonalSite\personal-site\src\images\link-galaxy.jpg");
   background-repeat: no-repeat;
@@ -21,8 +21,8 @@ canvas {
   animation: contrast-effect 15s infinite linear, load-effect 12s linear;
 
   opacity: 0.4;
-  background-position: 28.6% 17%;
-  background-size: 500%;
+  background-position: 50% 75%;
+  background-size: 300%;
   filter: contrast(175%) blur(0rem);
 }
 
@@ -117,14 +117,14 @@ canvas {
   }
   50% {
     opacity: 0;
-    background-position: 39.3% 21.5%;
-    background-size: 300%;
+    background-position: 50% 62.5%;
+    background-size: 200%;
     filter: contrast(125%) blur(1.5rem);
   }
   100% {
     opacity: 0.4;
-    background-position: 28.6% 17%;
-    background-size: 500%;
+    background-position: 50% 75%;
+    background-size: 300%;
     filter: contrast(175%) blur(0rem);
   }
 }
@@ -138,14 +138,14 @@ canvas {
   }
   50% {
     opacity: 0;
-    background-position: 39.3% 21.5%;
-    background-size: 300%;
+    background-position: 50% 62.5%;
+    background-size: 200%;
     filter: contrast(125%) blur(1.5rem);
   }
   100% {
     opacity: 0.4;
-    background-position: 28.6% 17%;
-    background-size: 500%;
+    background-position: 50% 75%;
+    background-size: 300%;
     filter: contrast(175%) blur(0rem);
   }
 }
@@ -158,14 +158,14 @@ canvas {
   }
   50% {
     opacity: 0;
-    background-position: 39.3% 21.5%;
-    background-size: 300%;
+    background-position: 50% 62.5%;
+    background-size: 200%;
     filter: contrast(125%) blur(1.5rem);
   }
   100% {
     opacity: 0.4;
-    background-position: 28.6% 17%;
-    background-size: 500%;
+    background-position: 50% 75%;
+    background-size: 300%;
     filter: contrast(175%) blur(0rem);
   }
 }
@@ -178,14 +178,14 @@ canvas {
   }
   50% {
     opacity: 0;
-    background-position: 39.3% 21.5%;
-    background-size: 300%;
+    background-position: 50% 62.5%;
+    background-size: 200%;
     filter: contrast(125%) blur(1.5rem);
   }
   100% {
     opacity: 0.4;
-    background-position: 28.6% 17%;
-    background-size: 500%;
+    background-position: 50% 75%;
+    background-size: 300%;
     filter: contrast(175%) blur(0rem);
   }
 }

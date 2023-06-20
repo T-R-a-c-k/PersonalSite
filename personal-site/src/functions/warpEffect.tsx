@@ -16,9 +16,6 @@ type Entity = {
 
 const warpEffect = () => {
   const canvas = document.querySelector("canvas");
-  canvas!.style.backgroundImage =
-    "url(E:\repos 2\real-projectsPersonalSitepersonal-sitesrcimageslink-galaxy.jpg)";
-  console.log(canvas);
   const context = canvas?.getContext("2d");
 
   let isPower = false;
