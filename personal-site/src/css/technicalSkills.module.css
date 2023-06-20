@@ -1,0 +1,200 @@
+body {
+  margin: 0;
+  overflow: hidden;
+  background: #000;
+}
+
+canvas {
+  position: relative;
+  image-rendering: pixelated;
+  z-index: 0;
+}
+
+.technicalBackground {
+  position: absolute;
+  background-image: url("E:\repos 2\real-projects\PersonalSite\personal-site\src\images\link-galaxy.jpg");
+  background-repeat: no-repeat;
+  width: 100%;
+  min-height: 100%;
+  background-repeat: no-repeat;
+  z-index: 1;
+  animation: contrast-effect 15s infinite linear, load-effect 12s linear;
+
+  opacity: 0.4;
+  background-position: 85% 43%;
+  background-size: 300%;
+  filter: contrast(175%) blur(0rem);
+}
+
+#rotator > p {
+  color: red;
+  animation: inherit;
+  animation-direction: reverse;
+  font-size: 2vw;
+  padding-left: 3vw;
+}
+
+#rotator {
+  width: 12vw;
+  height: 12vw;
+  position: absolute;
+  animation: rotations 30s linear infinite, fade-in 15s linear;
+  border: 1px orange dashed;
+  border-radius: 50%;
+  opacity: 1;
+}
+
+@keyframes rotations {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@-moz-keyframes rotations {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes rotations {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@-ms-keyframes rotations {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes contrast-effect {
+  from,
+  to {
+    filter: contrast(125%);
+  }
+  50% {
+    filter: contrast(175%);
+  }
+}
+
+@-moz-keyframes contrast-effect {
+  from,
+  to {
+    filter: contrast(125%);
+  }
+  50% {
+    filter: contrast(175%);
+  }
+}
+
+@-webkit-keyframes contrast-effect {
+  from,
+  to {
+    filter: contrast(125%);
+  }
+  50% {
+    filter: contrast(175%);
+  }
+}
+
+@-ms-keyframes contrast-effect {
+  from,
+  to {
+    filter: contrast(125%);
+  }
+  50% {
+    filter: contrast(175%);
+  }
+}
+
+@keyframes load-effect {
+  0% {
+    opacity: 0;
+    background-position: 50% 50%;
+    background-size: 100%;
+    filter: contrast(125%) blur(1.5rem);
+  }
+  50% {
+    opacity: 0;
+    background-position: 67.5% 46.5%;
+    background-size: 200%;
+    filter: contrast(125%) blur(1.5rem);
+  }
+  100% {
+    opacity: 0.4;
+    background-position: 85% 43%;
+    background-size: 300%;
+    filter: contrast(175%) blur(0rem);
+  }
+}
+
+@-moz-keyframes load-effect {
+  0% {
+    opacity: 0;
+    background-position: 50% 50%;
+    background-size: 100%;
+    filter: contrast(125%) blur(1.5rem);
+  }
+  50% {
+    opacity: 0;
+    background-position: 50% 62.5%;
+    background-size: 200%;
+    filter: contrast(125%) blur(1.5rem);
+  }
+  100% {
+    opacity: 0.4;
+    background-position: 85% 43%;
+    background-size: 300%;
+    filter: contrast(175%) blur(0rem);
+  }
+}
+@-webkit-keyframes load-effect {
+  0% {
+    opacity: 0;
+    background-position: 50% 50%;
+    background-size: 100%;
+    filter: contrast(125%) blur(1.5rem);
+  }
+  50% {
+    opacity: 0;
+    background-position: 50% 62.5%;
+    background-size: 200%;
+    filter: contrast(125%) blur(1.5rem);
+  }
+  100% {
+    opacity: 0.4;
+    background-position: 85% 43%;
+    background-size: 300%;
+    filter: contrast(175%) blur(0rem);
+  }
+}
+@-moz-keyframes load-effect {
+  0% {
+    opacity: 0;
+    background-position: 50% 50%;
+    background-size: 100%;
+    filter: contrast(125%) blur(1.5rem);
+  }
+  50% {
+    opacity: 0;
+    background-position: 50% 62.5%;
+    background-size: 200%;
+    filter: contrast(125%) blur(1.5rem);
+  }
+  100% {
+    opacity: 0.4;
+    background-position: 85% 43%;
+    background-size: 300%;
+    filter: contrast(175%) blur(0rem);
+  }
+}
+
+@keyframes fade-in {
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
