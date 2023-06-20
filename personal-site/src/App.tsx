@@ -14,7 +14,7 @@ const App: React.FunctionComponent<IAppProps> = (props) => {
       <Routes>
         <Route path="/" element={<Home interval={500} />} />
         <Route path="/education" element={<Education />} />
-        <Route path="/employement" element={<Employment />} />
+        <Route path="/employment" element={<Employment />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/technical_skills" element={<TechnicalSkills />} />
       </Routes>

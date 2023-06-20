@@ -104,9 +104,9 @@ const Profile: React.FunctionComponent<ProfileProps> = () => {
                     </div>
                   </Link>
 
-                  <Link to="/employement" className={Styles.employementLink}>
+                  <Link to="/employment" className={Styles.employmentLink}>
                     <div id={Styles.rotator}>
-                      <p>Employement</p>
+                      <p>Employment</p>
                     </div>
                   </Link>
                   <Link to="/projects" className={Styles.projectLink}>
