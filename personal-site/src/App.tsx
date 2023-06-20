@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./Pages/Home";
 import Education from "./Pages/Education";
-import Employment from "./Pages/Employement";
+import Employment from "./Pages/Employment";
 import Projects from "./Pages/Projects";
 import TechnicalSkills from "./Pages/TechnicalSkills";
 
