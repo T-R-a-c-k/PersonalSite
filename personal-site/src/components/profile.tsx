@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavigateFunction, useNavigate } from "react-router-dom";
 import Styles from "../css/profile.module.css";
 import { changeLetters } from "../functions/changeLetters";
 import Draggable from "react-draggable";
@@ -16,6 +16,7 @@ interface ProfileProps {}
 const SCREEN_SIZES = [300, 500, 800, 1023];
 
 const Profile: React.FunctionComponent<ProfileProps> = () => {
+  const navigate = useNavigate();
   const [windowSize, setWindowSize] = useState<Array<number>>([
     window.innerWidth,
     window.innerHeight,
@@ -52,6 +53,43 @@ const Profile: React.FunctionComponent<ProfileProps> = () => {
       window.removeEventListener("resize", handleWindowResize);
     };
   }, []);
+
+  const transition = (e: React.MouseEvent, navigate: NavigateFunction) => {
+    e.preventDefault();
+    const div = document.querySelectorAll("div");
+    const bars = [].filter.call(div, (element: HTMLElement) => {
+      return (
+        element.className.includes("_barLeft_") ||
+        element.className.includes("_barRight_")
+      );
+    });
+
+    const barLeft: HTMLElement = bars[0];
+    const barRight: HTMLElement = bars[1];
+
+    const interval = setInterval(() => {
+      if (barLeft.style.opacity === "") {
+        barLeft.style.opacity = "1";
+        barRight.style.opacity = "1";
+      } else {
+        barLeft.style.opacity = `${parseFloat(barLeft.style.opacity) - 0.05}`;
+        barRight.style.opacity = `${parseFloat(barLeft.style.opacity) - 0.05}`;
+      }
+    }, 33);
+
+    setTimeout(() => {
+      clearInterval(interval);
+      const target = e.target as HTMLElement;
+      let destination;
+      if (target.tagName === "P") {
+        destination = target.id.replace("_paragraph", "");
+      } else {
+        destination = target.children[0].id.replace("_paragraph", "");
+      }
+      console.log(target.tagName);
+      navigate(destination);
+    }, 1000);
+  };
 
   //Height should be about 1.7~ times bigger than width
   //This allows every configuration to keep the picture within the parent
@@ -98,28 +136,41 @@ const Profile: React.FunctionComponent<ProfileProps> = () => {
                 <h2>Width: {boundValues.left}</h2>
                 <h2>Height: {boundValues.top}</h2>
                 <div className={Styles.linkContainer}>
-                  <Link to="/education" className={Styles.educationLink}>
+                  <Link
+                    to="/education"
+                    className={Styles.educationLink}
+                    onClick={(e) => transition(e, navigate)}
+                  >
                     <div id={Styles.rotator}>
-                      <p>Education</p>
+                      <p id="education_paragraph">Education</p>
                     </div>
                   </Link>
 
-                  <Link to="/employment" className={Styles.employmentLink}>
+                  <Link
+                    to="/employment"
+                    className={Styles.employmentLink}
+                    onClick={(e) => transition(e, navigate)}
+                  >
                     <div id={Styles.rotator}>
-                      <p>Employment</p>
+                      <p id="employment_paragraph">Employment</p>
                     </div>
                   </Link>
-                  <Link to="/projects" className={Styles.projectLink}>
+                  <Link
+                    to="/projects"
+                    className={Styles.projectLink}
+                    onClick={(e) => transition(e, navigate)}
+                  >
                     <div id={Styles.rotator}>
-                      <p>Projects</p>
+                      <p id="projects_paragraph">Projects</p>
                     </div>
                   </Link>
                   <Link
                     to="/technical_skills"
                     className={Styles.technicalSkillLink}
+                    onClick={(e) => transition(e, navigate)}
                   >
                     <div id={Styles.rotator}>
-                      <p>Technical Skills</p>
+                      <p id="technical_skills_paragraph">Technical Skills</p>
                     </div>
                   </Link>
                 </div>

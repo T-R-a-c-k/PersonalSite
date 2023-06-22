@@ -54,6 +54,7 @@
 }
 
 .barLeft {
+  position: relative;
   width: 30%;
   min-height: 100%;
   display: flex;
@@ -70,6 +71,7 @@
   justify-content: center;
   background: black;
   display: block;
+  position: relative;
   overflow: hidden;
   z-index: 1;
 }

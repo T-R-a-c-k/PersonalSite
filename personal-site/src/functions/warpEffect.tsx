@@ -181,10 +181,11 @@ const warpEffect = () => {
       isPower = false;
     }, 10000);
 
+    /*
     window.addEventListener("mousemove", () => {
       power = Math.min(maxPower, power * 1.125);
     });
-
+  */
     resize();
 
     requestAnimationFrame(update);
