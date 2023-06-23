@@ -8,8 +8,13 @@ export type HomeProps = {
   interval: number;
 };
 
+let opacity = 1;
+
 const Home: React.FunctionComponent<HomeProps> = ({ interval }) => {
-  const [timer, setTimer] = React.useState<Timer>({ milliseconds: 0 });
+  const [timer, setTimer] = React.useState<Timer>({
+    milliseconds: 0,
+    seconds: 0,
+  });
   const greetingSentence =
     "Hi, my name is Tyler Rack and I think webdev is kinda cool.".split(" ");
   const greetingTimes = [
@@ -24,6 +29,7 @@ const Home: React.FunctionComponent<HomeProps> = ({ interval }) => {
 
       setTimer({
         milliseconds: timer.milliseconds + 1,
+        seconds: Math.floor(timer.milliseconds / 100),
       });
     }, 10);
   }, [timer.milliseconds, interval]);
@@ -46,16 +52,32 @@ const Home: React.FunctionComponent<HomeProps> = ({ interval }) => {
     );
   };
 
+  const changeOpacity = (
+    startAfterSeconds: number,
+    endAfterSeconds: number
+  ) => {
+    if (timer.seconds! > startAfterSeconds) {
+      console.log(opacity);
+      const divisor = 1 / (endAfterSeconds - startAfterSeconds) / 100;
+      opacity = opacity - divisor;
+      return opacity;
+    } else return 1;
+  };
+
   return (
     <React.Fragment>
       <div className={Styles.pageContainerImage}></div>
       <div id={Styles.pageContainer}>
-        <div className={Styles.greetingContainer}>
+        <div
+          className={Styles.greetingContainer}
+          hidden={!setVisibility(interval - 450, timer)}
+          style={{ opacity: `${changeOpacity(3, 7)}` }}
+        >
           {buildSpan(greetingSentence, greetingTimes)}
         </div>
         <div
-          style={{ width: "100%", minHeight: "90%" }}
-          hidden={setVisibility(100, timer)}
+          style={{ width: "100%", opacity: `${-1 * changeOpacity(4, 10)}` }}
+          hidden={setVisibility(interval - 400, timer)}
         >
           <Profile />
         </div>

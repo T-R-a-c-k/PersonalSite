@@ -14,7 +14,7 @@
   right: 0;
   z-index: 0;
   display: block;
-  background-image: url("https://img.freepik.com/premium-photo/starfield-deep-space-many-light-years-far-from-earth_112293-501.jpg");
+  background-image: url("E:\repos 2\real-projects\PersonalSite\personal-site\src\images\link-galaxy.jpg");
   background-repeat: no-repeat;
   background-size: 100%;
   width: 100%;
@@ -26,8 +26,10 @@
 }
 
 .greetingContainer {
+  position: relative;
+  top: 30vh;
   width: 30%;
-  min-height: 30vh;
+  min-height: 70vh;
 }
 
 .greeting {

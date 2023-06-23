@@ -12,7 +12,7 @@ const App: React.FunctionComponent<IAppProps> = (props) => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Home interval={500} />} />
+        <Route path="/" element={<Home interval={1000} />} />
         <Route path="/education" element={<Education />} />
         <Route path="/employment" element={<Employment />} />
         <Route path="/projects" element={<Projects />} />
