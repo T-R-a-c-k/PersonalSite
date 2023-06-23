@@ -50,11 +50,15 @@ const Home: React.FunctionComponent<HomeProps> = ({ interval }) => {
     <React.Fragment>
       <div className={Styles.pageContainerImage}></div>
       <div id={Styles.pageContainer}>
-        <h1 className="text-3xl font-bold underline">{timer.milliseconds}</h1>
         <div className={Styles.greetingContainer}>
           {buildSpan(greetingSentence, greetingTimes)}
         </div>
-        <Profile />
+        <div
+          style={{ width: "100%", minHeight: "90%" }}
+          hidden={setVisibility(100, timer)}
+        >
+          <Profile />
+        </div>
       </div>
     </React.Fragment>
   );

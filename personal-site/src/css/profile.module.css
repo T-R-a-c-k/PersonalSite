@@ -54,7 +54,6 @@
 }
 
 .barLeft {
-  position: relative;
   width: 30%;
   min-height: 100%;
   display: flex;
@@ -270,6 +269,7 @@
   }
   .barLeft {
     width: 80%;
+    height: 30%;
   }
   .barRight {
     min-width: 100%;
