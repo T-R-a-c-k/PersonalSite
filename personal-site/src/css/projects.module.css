@@ -20,7 +20,7 @@ canvas {
   z-index: 1;
   animation: contrast-effect 15s infinite linear, load-effect 5s linear;
 
-  opacity: 0.4;
+  opacity: 0.6;
   background-position: 50% 75%;
   background-size: 300%;
   filter: contrast(175%) blur(0rem);
