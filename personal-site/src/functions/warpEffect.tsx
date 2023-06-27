@@ -179,7 +179,7 @@ const warpEffect = () => {
     }, 0);
     setTimeout(() => {
       isPower = false;
-    }, 10000);
+    }, 4000);
 
     /*
     window.addEventListener("mousemove", () => {

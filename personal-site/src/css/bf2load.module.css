@@ -1,0 +1,102 @@
+.topLoadBar,
+.bottomLoadBar,
+.leftLoadBar,
+.rightLoadBar {
+  background-color: #1f3d50;
+  position: absolute;
+  z-index: 1000;
+}
+
+.topLoadBar,
+.bottomLoadBar {
+  height: 6px;
+  width: 100vw;
+}
+
+.topLoadBar {
+  top: 0%;
+  animation: top-bar-move 12s linear forwards;
+}
+
+.bottomLoadBar {
+  top: 99.2%;
+  animation: bottom-bar-move 12s linear forwards;
+}
+
+.leftLoadBar,
+.rightLoadBar {
+  height: 100%;
+  width: 6px;
+}
+
+.leftLoadBar {
+  left: 0%;
+  animation: left-bar-move 12s linear forwards;
+}
+
+.rightLoadBar {
+  left: 99.6%;
+  animation: right-bar-move 12s linear forwards;
+}
+
+@keyframes left-bar-move {
+  0%,
+  50% {
+    left: 0%;
+  }
+  62.25%,
+  85% {
+    left: 50%;
+  }
+
+  88%,
+  100% {
+    left: 0%;
+  }
+}
+
+@keyframes right-bar-move {
+  0%,
+  50% {
+    left: 99.6%;
+  }
+
+  62.25%,
+  85% {
+    left: 60%;
+  }
+  88%,
+  100% {
+    left: 99.6%;
+  }
+}
+
+@keyframes top-bar-move {
+  0%,
+  66% {
+    top: 0%;
+  }
+  78.5%,
+  85% {
+    top: 45%;
+  }
+  88%,
+  100% {
+    top: 0%;
+  }
+}
+
+@keyframes bottom-bar-move {
+  0%,
+  66% {
+    top: 99.2%;
+  }
+  78.5%,
+  85% {
+    top: 65%;
+  }
+  88%,
+  100% {
+    top: 99.2%;
+  }
+}

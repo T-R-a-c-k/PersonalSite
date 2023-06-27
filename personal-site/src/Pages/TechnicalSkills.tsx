@@ -1,45 +1,51 @@
 import Styles from "../css/technicalSkills.module.css";
 import { warpEffect } from "../functions/warpEffect";
 import { useEffect } from "react";
-import { fixRotators } from "../functions/fixRotators";
-import { ROTATOR_TECH_SKILLS_LINK_DISPLACEMENT_PC } from "../layouts/technicalSkillsStars";
+import { Link } from "react-router-dom";
 type TechnicalSkillsProps = {};
 
 const TechnicalSkills: React.FunctionComponent<TechnicalSkillsProps> = () => {
   useEffect(() => {
     warpEffect();
-    fixRotators(ROTATOR_TECH_SKILLS_LINK_DISPLACEMENT_PC);
   }, []);
   return (
     <>
-      <div className={Styles.barRightItem}>
-        <h1>Technical Skills</h1>
-
-        <div className={Styles.barRightItemHeading}>
-          <p>Languages</p>
-        </div>
-        <p>Java, Python, Javascript / HTML / CSS, C++, SQL, Bash </p>
-        <br></br>
-
-        <div className={Styles.barRightItemHeading}>
-          <p>Frameworks and Libraries</p>
-        </div>
-        <p>Jest, Node.js, MongoDB, Express.js, React, Spring, Bootstrap</p>
-        <br></br>
-        <div className={Styles.barRightItemHeading}>
-          <p>Tools</p>
-        </div>
-        <p>Git, Linux, Docker, Kubernates. CI/CD, JWT</p>
-      </div>
       <div className={Styles.technicalBackground}>
-        <div id={Styles.rotator}>
-          <p>Something</p>
-        </div>
-        <div id={Styles.rotator}>
-          <p>Something else</p>
-        </div>
-        <div id={Styles.rotator}>
-          <p>some other thing</p>
+        <div className="relative flex w-100% md:w-1/2 lg:w-1/2 flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-md ">
+          <div className="relative mx-4 -mt-6 mb-4 grid h-28 place-items-center overflow-hidden rounded-xl bg-gradient-to-tr from-pink-600 to-pink-400 bg-clip-border text-white shadow-lg shadow-pink-500/40">
+            <h3 className="block font-sans text-3xl font-semibold leading-snug tracking-normal text-white antialiased">
+              Technical Skills
+            </h3>
+          </div>
+          <div className="flex flex-col gap-4 p-6">
+            <div className="relative h-13 w-full min-w-[200px]">
+              <p className="block font-sans text-base font-normal leading-relaxed text-inherit antialiased text-center">
+                Languages <br />
+                <p>Java, Python, Javascript / HTML / CSS, C++, SQL, Bash </p>
+                <br></br>
+                <p>Frameworks and Libraries</p>
+                <p>
+                  Jest, Node.js, MongoDB, Express.js, React, Spring, Bootstrap
+                </p>
+                <br></br>
+                <p>Tools</p>
+                <p>Git, Linux, Docker, Kubernates. CI/CD, JWT</p>
+                <br></br>
+              </p>
+            </div>
+
+            <div className="-ml-2.5"></div>
+          </div>
+          <div className="p-6 pt-0">
+            <p className="mt-6 flex justify-center font-sans text-sm font-light leading-normal text-inherit antialiased">
+              <Link
+                to="/"
+                className="ml-1 block font-sans text-sm font-bold leading-normal text-pink-500 antialiased"
+              >
+                Return to home page
+              </Link>
+            </p>
+          </div>
         </div>
       </div>
       <canvas></canvas>

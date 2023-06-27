@@ -18,7 +18,7 @@ canvas {
   min-height: 100%;
   background-repeat: no-repeat;
   z-index: 1;
-  animation: contrast-effect 15s infinite linear, load-effect 12s linear;
+  animation: contrast-effect 15s infinite linear, load-effect 5s linear;
 
   opacity: 0.4;
   background-position: 50% 75%;
@@ -117,7 +117,7 @@ canvas {
   }
   50% {
     opacity: 0;
-    background-position: 50% 62.5%;
+    background-position: 50% 75%;
     background-size: 200%;
     filter: contrast(125%) blur(1.5rem);
   }
@@ -138,7 +138,7 @@ canvas {
   }
   50% {
     opacity: 0;
-    background-position: 50% 62.5%;
+    background-position: 50% 75%;
     background-size: 200%;
     filter: contrast(125%) blur(1.5rem);
   }
@@ -158,7 +158,7 @@ canvas {
   }
   50% {
     opacity: 0;
-    background-position: 50% 62.5%;
+    background-position: 50% 75%;
     background-size: 200%;
     filter: contrast(125%) blur(1.5rem);
   }
@@ -178,7 +178,7 @@ canvas {
   }
   50% {
     opacity: 0;
-    background-position: 50% 62.5%;
+    background-position: 50% 75%;
     background-size: 200%;
     filter: contrast(125%) blur(1.5rem);
   }
