@@ -16,7 +16,6 @@ canvas {
   background-repeat: no-repeat;
   width: 100%;
   min-height: 100%;
-  background-repeat: no-repeat;
   z-index: 1;
   animation: contrast-effect 15s infinite linear, load-effect 5s linear;
 
