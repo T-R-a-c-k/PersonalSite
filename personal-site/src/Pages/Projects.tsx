@@ -38,23 +38,23 @@ const Projects: React.FunctionComponent<ProjectsProps> = ({ interval }) => {
       <div className={` ${Loads.infoLoad}`}></div>
       <div className="static z-50">
         <div
-          className="absolute flex w-100% md:w-1/2 lg:w-1/2 flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-md z-50"
+          className="absolute flex w-100% md:w-1/2 lg:w-1/2 flex-col rounded-xl bg-slate-400 bg-clip-border text-gray-700 shadow-md z-50"
           style={{
             left: "40%",
             top: "20%",
             opacity: `${
-              timer.milliseconds > 788 ? (timer.milliseconds - 788) / 50 : 0
+              timer.milliseconds > 530 ? (timer.milliseconds - 530) / 50 : 0
             }`,
           }}
         >
-          <div className="relative mx-4 -mt-6 mb-4 grid h-28 place-items-center overflow-hidden rounded-xl bg-gradient-to-tr from-pink-600 to-pink-400 bg-clip-border text-white shadow-lg shadow-pink-500/40">
+          <div className="relative mx-4 -mt-6 mb-4 grid h-28 place-items-center overflow-hidden rounded-xl bg-white bg-gradient-to-tr from-slate-600 to-pink-400 bg-clip-border text-white shadow-lg shadow-pink-500/40">
             <h3 className="block font-sans text-3xl font-semibold leading-snug tracking-normal text-white antialiased">
               Projects
             </h3>
           </div>
           <div className="flex flex-col gap-4 p-6">
             <div className="relative h-13 w-full min-w-[200px]">
-              <p className="block font-sans text-base font-normal leading-relaxed text-inherit antialiased text-center">
+              <p className="block font-sans text-slate-800 font-normal leading-relaxed text-inherit antialiased text-center">
                 <h1 style={{ color: "red" }}>MERN Stack</h1>
                 <br />
                 Created full specified REST backend built with{" "}
@@ -73,7 +73,7 @@ const Projects: React.FunctionComponent<ProjectsProps> = ({ interval }) => {
             <p className="mt-6 flex justify-center font-sans text-sm font-light leading-normal text-inherit antialiased">
               <Link
                 to="/"
-                className="ml-1 block font-sans text-sm font-bold leading-normal text-pink-500 antialiased"
+                className="ml-1 block font-sans text-sm font-bold leading-normal text-red-100 antialiased"
               >
                 Return to home page
               </Link>
