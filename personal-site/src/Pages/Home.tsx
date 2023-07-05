@@ -35,7 +35,6 @@ const Home: React.FunctionComponent<HomeProps> = ({ interval }) => {
   }, [timer.milliseconds, interval]);
 
   const buildSpan = (sentence: Array<string>, timesBetween: Array<number>) => {
-    //console.log(sentence.length, timesBetween.length);
     return sentence.length === timesBetween.length ? (
       sentence.map((word, index) => {
         return (
@@ -57,7 +56,6 @@ const Home: React.FunctionComponent<HomeProps> = ({ interval }) => {
     endAfterSeconds: number
   ) => {
     if (timer.seconds! > startAfterSeconds) {
-      console.log(opacity);
       const divisor = 1 / (endAfterSeconds - startAfterSeconds) / 100;
       opacity = opacity - divisor;
       return opacity;

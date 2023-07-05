@@ -2,7 +2,8 @@
 .bottomLoadBar,
 .leftLoadBar,
 .rightLoadBar {
-  background-color: #1f3d50;
+  opacity: 0;
+  background-color: red;
   position: absolute;
   z-index: 1000;
 }
@@ -10,17 +11,17 @@
 .topLoadBar,
 .bottomLoadBar {
   height: 6px;
-  width: 100vw;
+  width: 100%;
 }
 
 .topLoadBar {
   top: 0%;
-  animation: top-bar-move 12s linear forwards;
+  /*animation: top-bar-move 12s linear infinite;*/
 }
 
 .bottomLoadBar {
   top: 99.2%;
-  animation: bottom-bar-move 12s linear forwards;
+  /* animation: bottom-bar-move 12s linear infinite;*/
 }
 
 .leftLoadBar,
@@ -31,38 +32,43 @@
 
 .leftLoadBar {
   left: 0%;
-  animation: left-bar-move 12s linear forwards;
+  /*animation: left-bar-move 12s linear infinite;*/
 }
 
 .rightLoadBar {
   left: 99.6%;
-  animation: right-bar-move 12s linear forwards;
+  /*animation: right-bar-move 12s linear infinite;*/
 }
 
 .infoLoad {
   position: absolute;
-  background-image: url("E:\repos 2\real-projects\PersonalSite\personal-site\src\images\SWBFII_Geonosis.png");
+  background-color: black;
+  opacity: 0;
+  /*background-image: url("E:\repos 2\real-projects\PersonalSite\personal-site\src\images\SWBFII_Geonosis.png");*/
   background-size: contain;
   top: 45%;
   left: 50%;
   width: 10%;
   height: 20%;
   z-index: 49;
-  animation: expand-box 12s linear forwards;
+  /*animation: expand-box 12s linear forwards;*/
 }
 
 @keyframes left-bar-move {
   0%,
   42% {
+    opacity: 0;
     left: 0%;
   }
   50%,
   57% {
+    opacity: 1;
     left: 50%;
   }
 
   58%,
   100% {
+    opacity: 1;
     left: 0%;
   }
 }
@@ -70,15 +76,18 @@
 @keyframes right-bar-move {
   0%,
   42% {
+    opacity: 0;
     left: 99.6%;
   }
 
   50%,
   57% {
+    opacity: 1;
     left: 60%;
   }
   58%,
   100% {
+    opacity: 1;
     left: 99.6%;
   }
 }
@@ -86,14 +95,17 @@
 @keyframes top-bar-move {
   0%,
   42% {
+    opacity: 0;
     top: 0%;
   }
   50%,
   57% {
+    opacity: 1;
     top: 45%;
   }
   58%,
   100% {
+    opacity: 1;
     top: 0%;
   }
 }
@@ -101,14 +113,17 @@
 @keyframes bottom-bar-move {
   0%,
   42% {
+    opacity: 0;
     top: 99.2%;
   }
   50%,
   57% {
+    opacity: 1;
     top: 65%;
   }
   58%,
   100% {
+    opacity: 1;
     top: 99.2%;
   }
 }
@@ -134,4 +149,11 @@
     height: 100%;
     filter: blur(0em);
   }
+}
+
+.topBar {
+  position: absolute;
+  width: 100%;
+  height: 6px;
+  background-color: red;
 }

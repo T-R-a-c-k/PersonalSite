@@ -35,7 +35,7 @@ const Projects: React.FunctionComponent<ProjectsProps> = ({ interval }) => {
       <div className={Loads.bottomLoadBar}></div>
       <div className={Loads.leftLoadBar}></div>
       <div className={Loads.rightLoadBar}></div>
-      <div className={` ${Loads.infoLoad}`}></div>
+      <div className={Loads.infoLoad}></div>
       <div className="static z-50">
         <div
           className="absolute flex w-100% md:w-1/2 lg:w-1/2 flex-col rounded-xl bg-slate-400 bg-clip-border text-gray-700 shadow-md z-50"
