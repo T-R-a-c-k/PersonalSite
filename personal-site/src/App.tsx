@@ -5,6 +5,8 @@ import Education from "./Pages/Education";
 import Employment from "./Pages/Employment";
 import Projects from "./Pages/Projects";
 import TechnicalSkills from "./Pages/TechnicalSkills";
+import Header from "./components/header";
+import Footer from "./components/footer";
 
 export type IAppProps = {};
 
@@ -13,6 +15,7 @@ const INTERVAL_NUMBER = 1200;
 const App: React.FunctionComponent<IAppProps> = (props) => {
   return (
     <BrowserRouter>
+      <Header />
       <Routes>
         <Route path="/" element={<Home interval={1000} />} />
         <Route
@@ -32,6 +35,7 @@ const App: React.FunctionComponent<IAppProps> = (props) => {
           element={<TechnicalSkills interval={INTERVAL_NUMBER} />}
         />
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 };

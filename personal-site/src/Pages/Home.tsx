@@ -64,21 +64,21 @@ const Home: React.FunctionComponent<HomeProps> = ({ interval }) => {
 
   return (
     <React.Fragment>
-      <div className={Styles.pageContainerImage}></div>
       <div id={Styles.pageContainer}>
         <div
           className={Styles.greetingContainer}
           hidden={!setVisibility(interval - 450, timer)}
-          style={{ opacity: `${changeOpacity(3, 7)}` }}
+          style={{
+            opacity: `${changeOpacity(3, 7)}`,
+            position: "absolute",
+            zIndex: "50",
+          }}
         >
           {buildSpan(greetingSentence, greetingTimes)}
         </div>
-        <div
-          style={{ width: "100%", opacity: `${-1 * changeOpacity(4, 10)}` }}
-          hidden={setVisibility(interval - 400, timer)}
-        >
-          <Profile />
-        </div>
+      </div>
+      <div className="w-full h-full">
+        <Profile />
       </div>
     </React.Fragment>
   );
