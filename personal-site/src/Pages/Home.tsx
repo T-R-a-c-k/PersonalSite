@@ -3,6 +3,7 @@ import Profile from "../components/profile";
 import Styles from "../css/home.module.css";
 import { Timer } from "../types/timer";
 import { setVisibility } from "../functions/setVisibility";
+import { changeOpacity } from "../functions/changeOpacity";
 
 export type HomeProps = {
   interval: number;
@@ -51,17 +52,6 @@ const Home: React.FunctionComponent<HomeProps> = ({ interval }) => {
     );
   };
 
-  const changeOpacity = (
-    startAfterSeconds: number,
-    endAfterSeconds: number
-  ) => {
-    if (timer.seconds! > startAfterSeconds) {
-      const divisor = 1 / (endAfterSeconds - startAfterSeconds) / 100;
-      opacity = opacity - divisor;
-      return opacity;
-    } else return 1;
-  };
-
   return (
     <React.Fragment>
       <div id={Styles.pageContainer}>
@@ -69,7 +59,7 @@ const Home: React.FunctionComponent<HomeProps> = ({ interval }) => {
           className={Styles.greetingContainer}
           hidden={!setVisibility(interval - 450, timer)}
           style={{
-            opacity: `${changeOpacity(3, 7)}`,
+            opacity: `${changeOpacity(timer.seconds!, 3, 7)}`,
             position: "absolute",
             zIndex: "50",
           }}

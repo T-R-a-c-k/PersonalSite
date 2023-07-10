@@ -28,6 +28,13 @@ const Education: React.FunctionComponent<EducationProps> = ({ interval }) => {
   useEffect(() => {
     warpEffect();
   }, []);
+
+  React.useEffect(() => {
+    const header = document.querySelector("header");
+    timer.milliseconds > 530
+      ? (header!.style.zIndex = "10")
+      : (header!.style.zIndex = "0");
+  }, [timer.milliseconds]);
   return (
     <>
       <div className={Loads.topLoadBar}></div>

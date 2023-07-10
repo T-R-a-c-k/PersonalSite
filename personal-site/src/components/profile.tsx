@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link, NavigateFunction, useNavigate } from "react-router-dom";
 import Styles from "../css/profile.module.css";
 import { changeLetters } from "../functions/changeLetters";
+import Footer from "./footer";
 import Draggable from "react-draggable";
 import { fixRotators } from "../functions/fixRotators";
 import {
@@ -164,6 +165,16 @@ const Profile: React.FunctionComponent<ProfileProps> = () => {
       duration: 2000,
       iterations: 1,
     };
+
+    const header = document.querySelector("header");
+
+    const zChange = [
+      { zIndex: "10", offset: 0 },
+      { zIndex: "10", offset: 0.5 },
+      { zIndex: "0", offset: 0.56 },
+      { zIndex: "0", offset: 1 },
+    ];
+    header?.animate(zChange, expandTiming);
     box[0].animate(expand, expandTiming);
     allowOverflow();
   };
@@ -274,6 +285,7 @@ const Profile: React.FunctionComponent<ProfileProps> = () => {
           </Draggable>
         </div>
       </div>
+      <Footer />
     </React.Fragment>
   );
 };

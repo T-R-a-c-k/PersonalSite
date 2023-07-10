@@ -1,0 +1,178 @@
+.footer {
+  width: 100%;
+  min-height: 50%;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  background-color: black;
+  text-align: center;
+}
+
+.footerItem > h1 {
+  margin: 1%;
+  font-size: 3rem;
+}
+
+.footerItem > p {
+  padding-top: 1%;
+  padding-left: 1%;
+}
+
+.footer > .footerItem {
+  margin: var(--margin-all);
+  inline-size: 70%;
+  overflow-wrap: break-word;
+}
+
+.screen {
+  width: 40%;
+  border: 3px solid rgb(27, 11, 8, 0.8);
+  position: relative;
+  aspect-ratio: 16/10;
+  border-radius: 1rem;
+  background-color: rgb(var(--chosen-color), 0);
+  overflow: hidden;
+  margin: var(--margin-all);
+}
+
+.screen > .screenImage {
+  background-image: url("E:\repos 2\real-projects\PersonalSite\personal-site\src\images\odst.jpg");
+  position: absolute;
+  min-height: 100%;
+  width: 100%;
+  background-size: 100%;
+  filter: contrast(150%) hue-rotate(35deg);
+  opacity: 0.7;
+  animation: pan-screen-image 22s infinite linear;
+}
+
+.screen > .screenContent {
+  display: flex;
+  color: white;
+  text-transform: uppercase;
+  justify-content: center;
+  align-items: flex-end;
+  width: 100%;
+  min-height: 100%;
+}
+
+.screenOverlay {
+  position: absolute;
+  background-size: 200px 100px;
+  background: repeating-linear-gradient(
+    rgb(var(--chosen-color), 0.15),
+    rgb(var(--chosen-color), 0.15) 3px,
+    transparent 3px,
+    transparent 9px
+  );
+  min-height: 300%;
+  width: 100%;
+  animation: pan-overlay 30s infinite linear;
+}
+
+@keyframes pan-overlay {
+  from {
+    top: -100%;
+  }
+  to {
+    top: 0%;
+  }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes pan-overlay {
+  from {
+    top: -100%;
+  }
+  to {
+    top: 0%;
+  }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes pan-overlay {
+  from {
+    top: -100%;
+  }
+  to {
+    top: 0%;
+  }
+}
+
+/* Internet Explorer */
+@-ms-keyframes pan-overlay {
+  from {
+    top: -100%;
+  }
+  to {
+    top: 0%;
+  }
+}
+
+@keyframes pan-screen-image {
+  0% {
+    background-position: 5% 5%;
+    background-size: 105%;
+  }
+
+  50% {
+    background-position: 0% 0%;
+    background-size: 100%;
+  }
+  100% {
+    background-position: 5% 5%;
+    background-size: 105%;
+  }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes pan-screen-image {
+  0% {
+    background-position: 5% 5%;
+    background-size: 105%;
+  }
+
+  50% {
+    background-position: 0% 0%;
+    background-size: 100%;
+  }
+  100% {
+    background-position: 5% 5%;
+    background-size: 105%;
+  }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes pan-screen-image {
+  0% {
+    background-position: 5% 5%;
+    background-size: 105%;
+  }
+
+  50% {
+    background-position: 0% 0%;
+    background-size: 100%;
+  }
+  100% {
+    background-position: 5% 5%;
+    background-size: 105%;
+  }
+}
+
+/* Internet Explorer */
+@-ms-keyframes pan-screen-image {
+  0% {
+    background-position: 5% 5%;
+    background-size: 105%;
+  }
+
+  50% {
+    background-position: 0% 0%;
+    background-size: 100%;
+  }
+  100% {
+    background-position: 5% 5%;
+    background-size: 105%;
+  }
+}

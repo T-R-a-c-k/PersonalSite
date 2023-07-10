@@ -50,7 +50,7 @@
   left: 50%;
   width: 10%;
   height: 20%;
-  z-index: 49;
+  z-index: 1000;
   /*animation: expand-box 12s linear forwards;*/
 }
 

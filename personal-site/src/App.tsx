@@ -15,7 +15,7 @@ const INTERVAL_NUMBER = 1200;
 const App: React.FunctionComponent<IAppProps> = (props) => {
   return (
     <BrowserRouter>
-      <Header />
+      <Header interval={INTERVAL_NUMBER} />
       <Routes>
         <Route path="/" element={<Home interval={1000} />} />
         <Route

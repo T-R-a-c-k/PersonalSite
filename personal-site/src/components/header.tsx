@@ -1,11 +1,38 @@
-import Styles from "../css/header.module.css";
+import { Timer } from "../types/timer";
+import React from "react";
+import { changeOpacity } from "../functions/changeOpacity";
 
-interface HeaderProps {}
+interface HeaderProps {
+  interval: number;
+}
 
-const Header: React.FunctionComponent<HeaderProps> = () => {
+const Header: React.FunctionComponent<HeaderProps> = ({ interval }) => {
+  const [timer, setTimer] = React.useState<Timer>({
+    milliseconds: 0,
+    seconds: 0,
+  });
+
+  React.useEffect(() => {
+    setTimeout(() => {
+      if (timer.milliseconds === interval) {
+        return;
+      }
+
+      setTimer({
+        milliseconds: timer.milliseconds + 1,
+        seconds: Math.floor(timer.milliseconds / 100),
+      });
+    }, 10);
+  }, [timer.milliseconds, interval]);
+
   return (
     <>
-      <header className="w-full">
+      <header
+        className="w-full absolute z-10"
+        style={{
+          opacity: `${1 - changeOpacity(timer.seconds!, 3, 7)}`,
+        }}
+      >
         <nav className="bg-white border-gray-200 px-4 lg:px-6 py-2.5 dark:bg-gray-800">
           <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
             <a href="https://flowbite.com" className="flex items-center">
