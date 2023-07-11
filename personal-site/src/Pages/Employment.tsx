@@ -2,10 +2,10 @@ import Styles from "../css/employment.module.css";
 import { warpEffect } from "../functions/warpEffect";
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
-import Loads from "../css/bf2load.module.css";
 import { Timer } from "../types/timer";
 
 type EmploymentProps = { interval: number };
+const LOAD_TIME = 350;
 
 const Employment: React.FunctionComponent<EmploymentProps> = ({ interval }) => {
   const [timer, setTimer] = React.useState<Timer>({
@@ -29,13 +29,16 @@ const Employment: React.FunctionComponent<EmploymentProps> = ({ interval }) => {
   useEffect(() => {
     warpEffect();
   }, []);
+
+  React.useEffect(() => {
+    const header = document.querySelector("header");
+    timer.milliseconds > LOAD_TIME
+      ? (header!.style.zIndex = "10")
+      : (header!.style.zIndex = "0");
+  }, [timer.milliseconds]);
   return (
     <>
-      <div className={Loads.topLoadBar}></div>
-      <div className={Loads.bottomLoadBar}></div>
-      <div className={Loads.leftLoadBar}></div>
-      <div className={Loads.rightLoadBar}></div>
-      <div className={` ${Loads.infoLoad}`}></div>
+      <div className={Styles.infoLoad}></div>
 
       <div className="static z-50">
         <div
@@ -44,7 +47,9 @@ const Employment: React.FunctionComponent<EmploymentProps> = ({ interval }) => {
             left: "40%",
             top: "20%",
             opacity: `${
-              timer.milliseconds > 530 ? (timer.milliseconds - 530) / 50 : 0
+              timer.milliseconds > LOAD_TIME
+                ? (timer.milliseconds - LOAD_TIME) / 50
+                : 0
             }`,
           }}
         >

@@ -126,60 +126,60 @@ canvas {
 @-moz-keyframes load-effect {
   0% {
     opacity: 0;
-    background-position: 50% 50%;
-    background-size: 100%;
+    background-position: 90% 0%;
+    background-size: 500%;
     filter: contrast(125%) blur(1.5rem);
   }
   50% {
     opacity: 0;
-    background-position: 28.6% 17%;
+    background-position: 95% 40%;
     background-size: 300%;
     filter: contrast(125%) blur(1.5rem);
   }
   100% {
     opacity: 0.4;
-    background-position: 28.6% 17%;
-    background-size: 1000%;
+    background-position: 100% 80%;
+    background-size: 100%;
     filter: contrast(175%) blur(0rem);
   }
 }
 @-webkit-keyframes load-effect {
   0% {
     opacity: 0;
-    background-position: 50% 50%;
-    background-size: 100%;
+    background-position: 90% 0%;
+    background-size: 500%;
     filter: contrast(125%) blur(1.5rem);
   }
   50% {
     opacity: 0;
-    background-position: 28.6% 17%;
+    background-position: 95% 40%;
     background-size: 300%;
     filter: contrast(125%) blur(1.5rem);
   }
   100% {
     opacity: 0.4;
-    background-position: 28.6% 17%;
-    background-size: 1000%;
+    background-position: 100% 80%;
+    background-size: 100%;
     filter: contrast(175%) blur(0rem);
   }
 }
 @-moz-keyframes load-effect {
   0% {
     opacity: 0;
-    background-position: 50% 50%;
-    background-size: 100%;
+    background-position: 90% 0%;
+    background-size: 500%;
     filter: contrast(125%) blur(1.5rem);
   }
   50% {
     opacity: 0;
-    background-position: 28.6% 17%;
+    background-position: 95% 40%;
     background-size: 300%;
     filter: contrast(125%) blur(1.5rem);
   }
   100% {
     opacity: 0.4;
-    background-position: 28.6% 17%;
-    background-size: 1000%;
+    background-position: 100% 80%;
+    background-size: 100%;
     filter: contrast(175%) blur(0rem);
   }
 }

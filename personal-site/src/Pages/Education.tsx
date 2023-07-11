@@ -2,7 +2,6 @@ import Styles from "../css/education.module.css";
 import { warpEffect } from "../functions/warpEffect";
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
-import Loads from "../css/bf2load.module.css";
 import { Timer } from "../types/timer";
 
 type EducationProps = { interval: number };
@@ -25,6 +24,7 @@ const Education: React.FunctionComponent<EducationProps> = ({ interval }) => {
       });
     }, 10);
   }, [timer.milliseconds, interval]);
+
   useEffect(() => {
     warpEffect();
   }, []);
@@ -37,11 +37,7 @@ const Education: React.FunctionComponent<EducationProps> = ({ interval }) => {
   }, [timer.milliseconds]);
   return (
     <>
-      <div className={Loads.topLoadBar}></div>
-      <div className={Loads.bottomLoadBar}></div>
-      <div className={Loads.leftLoadBar}></div>
-      <div className={Loads.rightLoadBar}></div>
-      <div className={` ${Loads.infoLoad}`}></div>
+      <div className={Styles.infoLoad}></div>
 
       <div className="static z-50">
         <div
