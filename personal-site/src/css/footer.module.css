@@ -3,10 +3,13 @@
   min-height: 50%;
   display: flex;
   align-items: center;
-  align-content: center;
-  justify-content: center;
   background-color: black;
-  text-align: center;
+}
+.footerItem {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .footerItem > h1 {
@@ -20,13 +23,12 @@
 }
 
 .footer > .footerItem {
-  margin: var(--margin-all);
-  inline-size: 70%;
+  inline-size: 100%;
   overflow-wrap: break-word;
 }
 
 .screen {
-  width: 40%;
+  width: 70%;
   border: 3px solid rgb(27, 11, 8, 0.8);
   position: relative;
   aspect-ratio: 16/10;
@@ -174,5 +176,14 @@
   100% {
     background-position: 5% 5%;
     background-size: 105%;
+  }
+}
+
+@media only screen and (max-width: 1023px) {
+  .footer {
+    flex-direction: column;
+  }
+  .footerItem {
+    padding-top: 15%;
   }
 }

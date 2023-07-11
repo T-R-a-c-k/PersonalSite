@@ -35,7 +35,6 @@ const App: React.FunctionComponent<IAppProps> = (props) => {
           element={<TechnicalSkills interval={INTERVAL_NUMBER} />}
         />
       </Routes>
-      <Footer />
     </BrowserRouter>
   );
 };

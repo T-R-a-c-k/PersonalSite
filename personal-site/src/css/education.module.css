@@ -6,17 +6,18 @@ canvas {
 
 .educationBackground {
   position: absolute;
-  background-image: url("E:\repos 2\real-projects\PersonalSite\personal-site\src\images\link-galaxy.jpg");
+  background-image: url("E:\repos 2\real-projects\PersonalSite\personal-site\src\images\educationPlanet.jpg");
   background-repeat: no-repeat;
   width: 100%;
-  min-height: 100%;
+  height: 100%;
   z-index: 1;
   animation: contrast-effect 15s infinite linear, load-effect 5s linear;
 
-  opacity: 0.6;
-  background-position: 28.6% 17%;
-  background-size: 500%;
+  background-size: 100%;
+  background-position: 100% 80%;
+  transform: scaleX(-1);
   filter: contrast(175%) blur(0rem);
+  overflow: hidden;
 }
 
 #rotator > p {
@@ -104,20 +105,20 @@ canvas {
 @keyframes load-effect {
   0% {
     opacity: 0;
-    background-position: 50% 50%;
-    background-size: 100%;
+    background-position: 90% 0%;
+    background-size: 500%;
     filter: contrast(125%) blur(1.5rem);
   }
   50% {
     opacity: 0;
-    background-position: 28.6% 17%;
+    background-position: 95% 40%;
     background-size: 300%;
     filter: contrast(125%) blur(1.5rem);
   }
   100% {
     opacity: 0.4;
-    background-position: 28.6% 17%;
-    background-size: 500%;
+    background-position: 100% 80%;
+    background-size: 100%;
     filter: contrast(175%) blur(0rem);
   }
 }
@@ -138,7 +139,7 @@ canvas {
   100% {
     opacity: 0.4;
     background-position: 28.6% 17%;
-    background-size: 500%;
+    background-size: 1000%;
     filter: contrast(175%) blur(0rem);
   }
 }
@@ -158,7 +159,7 @@ canvas {
   100% {
     opacity: 0.4;
     background-position: 28.6% 17%;
-    background-size: 500%;
+    background-size: 1000%;
     filter: contrast(175%) blur(0rem);
   }
 }
@@ -178,7 +179,7 @@ canvas {
   100% {
     opacity: 0.4;
     background-position: 28.6% 17%;
-    background-size: 500%;
+    background-size: 1000%;
     filter: contrast(175%) blur(0rem);
   }
 }

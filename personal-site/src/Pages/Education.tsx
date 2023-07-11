@@ -6,7 +6,7 @@ import Loads from "../css/bf2load.module.css";
 import { Timer } from "../types/timer";
 
 type EducationProps = { interval: number };
-
+const LOAD_TIME = 350;
 const Education: React.FunctionComponent<EducationProps> = ({ interval }) => {
   const [timer, setTimer] = React.useState<Timer>({
     milliseconds: 0,
@@ -31,7 +31,7 @@ const Education: React.FunctionComponent<EducationProps> = ({ interval }) => {
 
   React.useEffect(() => {
     const header = document.querySelector("header");
-    timer.milliseconds > 530
+    timer.milliseconds > LOAD_TIME
       ? (header!.style.zIndex = "10")
       : (header!.style.zIndex = "0");
   }, [timer.milliseconds]);
@@ -50,7 +50,9 @@ const Education: React.FunctionComponent<EducationProps> = ({ interval }) => {
             left: "40%",
             top: "20%",
             opacity: `${
-              timer.milliseconds > 530 ? (timer.milliseconds - 530) / 50 : 0
+              timer.milliseconds > LOAD_TIME
+                ? (timer.milliseconds - LOAD_TIME) / 50
+                : 0
             }`,
           }}
         >
@@ -86,7 +88,6 @@ const Education: React.FunctionComponent<EducationProps> = ({ interval }) => {
           </div>
         </div>
       </div>
-
       <div className={Styles.educationBackground}></div>
       <canvas></canvas>
     </>

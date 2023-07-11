@@ -27,10 +27,12 @@ interface FooterProps {}
 const Footer: React.FunctionComponent<FooterProps> = () => {
   return (
     <div className={Styles.footer}>
-      <div className={Styles.screen}>
-        <div className={Styles.screenImage}></div>
-        <div className={Styles.screenOverlay}></div>
-        <div className={Styles.screenContent}>Github: T-R-a-c-k</div>
+      <div className={Styles.footerItem}>
+        <div className={Styles.screen}>
+          <div className={Styles.screenImage}></div>
+          <div className={Styles.screenOverlay}></div>
+          <div className={Styles.screenContent}>Github: T-R-a-c-k</div>
+        </div>
       </div>
       <div className={Styles.footerItem}>
         <h1>About Me</h1>
