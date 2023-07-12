@@ -12,7 +12,7 @@ canvas {
 
 .technicalBackground {
   position: absolute;
-  background-image: url("E:\repos 2\real-projects\PersonalSite\personal-site\src\images\link-galaxy.jpg");
+  background-image: url("E:\repos 2\real-projects\PersonalSite\personal-site\src\images\technicalPlanets.jpg");
   background-repeat: no-repeat;
   width: 100%;
   min-height: 100%;
@@ -20,8 +20,8 @@ canvas {
   z-index: 1;
   animation: contrast-effect 15s infinite linear, load-effect 5s linear;
 
-  opacity: 0.4;
-  background-position: 85% 43%;
+  opacity: 0.8;
+  background-position: 100% 43%;
   background-size: 300%;
   filter: contrast(175%) blur(0rem);
 }
@@ -42,6 +42,18 @@ canvas {
   border: 1px orange dashed;
   border-radius: 50%;
   opacity: 1;
+}
+
+.infoLoad {
+  position: absolute;
+  background-color: black;
+  opacity: 0;
+  background-size: contain;
+  top: 45%;
+  left: 50%;
+  width: 10%;
+  height: 20%;
+  z-index: 1000;
 }
 
 @keyframes rotations {
@@ -117,13 +129,13 @@ canvas {
   }
   50% {
     opacity: 0;
-    background-position: 85% 43%;
+    background-position: 100% 43%;
     background-size: 200%;
     filter: contrast(125%) blur(1.5rem);
   }
   100% {
     opacity: 0.4;
-    background-position: 85% 43%;
+    background-position: 100% 43%;
     background-size: 300%;
     filter: contrast(175%) blur(0rem);
   }
@@ -144,7 +156,7 @@ canvas {
   }
   100% {
     opacity: 0.4;
-    background-position: 85% 43%;
+    background-position: 100% 43%;
     background-size: 300%;
     filter: contrast(175%) blur(0rem);
   }
@@ -164,7 +176,7 @@ canvas {
   }
   100% {
     opacity: 0.4;
-    background-position: 85% 43%;
+    background-position: 100% 43%;
     background-size: 300%;
     filter: contrast(175%) blur(0rem);
   }
@@ -184,7 +196,7 @@ canvas {
   }
   100% {
     opacity: 0.4;
-    background-position: 85% 43%;
+    background-position: 100% 43%;
     background-size: 300%;
     filter: contrast(175%) blur(0rem);
   }

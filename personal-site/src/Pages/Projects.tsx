@@ -6,6 +6,7 @@ import Loads from "../css/bf2load.module.css";
 import { Timer } from "../types/timer";
 
 type ProjectsProps = { interval: number };
+const LOAD_TIME = 350;
 
 const Projects: React.FunctionComponent<ProjectsProps> = ({ interval }) => {
   const [timer, setTimer] = React.useState<Timer>({
@@ -29,6 +30,13 @@ const Projects: React.FunctionComponent<ProjectsProps> = ({ interval }) => {
   useEffect(() => {
     warpEffect();
   }, []);
+
+  React.useEffect(() => {
+    const header = document.querySelector("header");
+    timer.milliseconds > LOAD_TIME
+      ? (header!.style.zIndex = "10")
+      : (header!.style.zIndex = "0");
+  }, [timer.milliseconds]);
   return (
     <>
       <div className={Loads.topLoadBar}></div>
@@ -43,7 +51,9 @@ const Projects: React.FunctionComponent<ProjectsProps> = ({ interval }) => {
             left: "40%",
             top: "20%",
             opacity: `${
-              timer.milliseconds > 530 ? (timer.milliseconds - 530) / 50 : 0
+              timer.milliseconds > LOAD_TIME
+                ? (timer.milliseconds - LOAD_TIME) / 50
+                : 0
             }`,
           }}
         >

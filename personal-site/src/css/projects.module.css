@@ -12,7 +12,7 @@ canvas {
 
 .projectsBackground {
   position: absolute;
-  background-image: url("E:\repos 2\real-projects\PersonalSite\personal-site\src\images\link-galaxy.jpg");
+  background-image: url("E:\repos 2\real-projects\PersonalSite\personal-site\src\images\projectsPlanet.jpg");
   background-repeat: no-repeat;
   width: 100%;
   min-height: 100%;
@@ -21,7 +21,7 @@ canvas {
 
   opacity: 0.6;
   background-position: 50% 75%;
-  background-size: 300%;
+  background-size: 200%;
   filter: contrast(175%) blur(0rem);
 }
 
@@ -117,13 +117,13 @@ canvas {
   50% {
     opacity: 0;
     background-position: 50% 75%;
-    background-size: 200%;
+    background-size: 150%;
     filter: contrast(125%) blur(1.5rem);
   }
   100% {
     opacity: 0.4;
     background-position: 50% 75%;
-    background-size: 300%;
+    background-size: 201%;
     filter: contrast(175%) blur(0rem);
   }
 }
@@ -138,13 +138,13 @@ canvas {
   50% {
     opacity: 0;
     background-position: 50% 75%;
-    background-size: 200%;
+    background-size: 150%;
     filter: contrast(125%) blur(1.5rem);
   }
   100% {
     opacity: 0.4;
     background-position: 50% 75%;
-    background-size: 300%;
+    background-size: 201%;
     filter: contrast(175%) blur(0rem);
   }
 }
@@ -158,13 +158,13 @@ canvas {
   50% {
     opacity: 0;
     background-position: 50% 75%;
-    background-size: 200%;
+    background-size: 150%;
     filter: contrast(125%) blur(1.5rem);
   }
   100% {
     opacity: 0.4;
     background-position: 50% 75%;
-    background-size: 300%;
+    background-size: 201%;
     filter: contrast(175%) blur(0rem);
   }
 }
@@ -178,13 +178,13 @@ canvas {
   50% {
     opacity: 0;
     background-position: 50% 75%;
-    background-size: 200%;
+    background-size: 150%;
     filter: contrast(125%) blur(1.5rem);
   }
   100% {
     opacity: 0.4;
     background-position: 50% 75%;
-    background-size: 300%;
+    background-size: 201%;
     filter: contrast(175%) blur(0rem);
   }
 }

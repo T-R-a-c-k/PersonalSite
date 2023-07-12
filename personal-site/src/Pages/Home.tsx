@@ -9,8 +9,6 @@ export type HomeProps = {
   interval: number;
 };
 
-let opacity = 1;
-
 const Home: React.FunctionComponent<HomeProps> = ({ interval }) => {
   const [timer, setTimer] = React.useState<Timer>({
     milliseconds: 0,
@@ -23,6 +21,8 @@ const Home: React.FunctionComponent<HomeProps> = ({ interval }) => {
   ];
 
   React.useEffect(() => {
+    const header = document.querySelector("header"); //In case someone clicks back during the load warp, this will fix the z-index
+    header!.style.zIndex = "10";
     setTimeout(() => {
       if (timer.milliseconds === interval) {
         return;
