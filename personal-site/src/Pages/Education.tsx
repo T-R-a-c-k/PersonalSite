@@ -6,6 +6,10 @@ import { Timer } from "../types/timer";
 
 type EducationProps = { interval: number };
 const LOAD_TIME = 350;
+
+const BOX_POSITION = (width: number) => {
+  return width > 650 ? { left: 40, top: 20 } : { left: 0, top: 20 };
+};
 const Education: React.FunctionComponent<EducationProps> = ({ interval }) => {
   const [timer, setTimer] = React.useState<Timer>({
     milliseconds: 0,
@@ -35,16 +39,17 @@ const Education: React.FunctionComponent<EducationProps> = ({ interval }) => {
       ? (header!.style.zIndex = "10")
       : (header!.style.zIndex = "0");
   }, [timer.milliseconds]);
+
   return (
     <>
       <div className={Styles.infoLoad}></div>
 
       <div className="static z-50">
         <div
-          className="absolute flex w-100% md:w-1/2 lg:w-1/2 flex-col rounded-xl bg-slate-400 bg-clip-border text-gray-700 shadow-md z-50"
+          className="absolute flex w-100% sm: w-full md:w-1/2 lg:w-1/2 flex-col rounded-xl bg-slate-400 bg-clip-border text-gray-700 shadow-md z-50"
           style={{
-            left: "40%",
-            top: "20%",
+            left: `${BOX_POSITION(window.innerWidth).left}%`,
+            top: `${BOX_POSITION(window.innerWidth).top}%`,
             opacity: `${
               timer.milliseconds > LOAD_TIME
                 ? (timer.milliseconds - LOAD_TIME) / 50

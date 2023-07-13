@@ -1,5 +1,5 @@
 import { Timer } from "../types/timer";
-import React, { useEffect } from "react";
+import React from "react";
 import { changeOpacity } from "../functions/changeOpacity";
 import { Link } from "react-router-dom";
 
