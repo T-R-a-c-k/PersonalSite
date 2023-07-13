@@ -3,13 +3,11 @@ import { warpEffect } from "../functions/warpEffect";
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Timer } from "../types/timer";
+import { BOX_POSITION } from "../functions/boxPosition";
 
 type EducationProps = { interval: number };
 const LOAD_TIME = 350;
 
-const BOX_POSITION = (width: number) => {
-  return width > 650 ? { left: 40, top: 20 } : { left: 0, top: 20 };
-};
 const Education: React.FunctionComponent<EducationProps> = ({ interval }) => {
   const [timer, setTimer] = React.useState<Timer>({
     milliseconds: 0,
@@ -36,7 +34,7 @@ const Education: React.FunctionComponent<EducationProps> = ({ interval }) => {
   React.useEffect(() => {
     const header = document.querySelector("header");
     timer.milliseconds > LOAD_TIME
-      ? (header!.style.zIndex = "10")
+      ? (header!.style.zIndex = "100")
       : (header!.style.zIndex = "0");
   }, [timer.milliseconds]);
 

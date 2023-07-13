@@ -202,11 +202,129 @@ canvas {
   }
 }
 
+@keyframes load-effect-small {
+  0% {
+    opacity: 0;
+    background-position: 50% 50%;
+    background-size: cover;
+    filter: contrast(125%) blur(1.5rem);
+  }
+  50% {
+    opacity: 0;
+    background-position: 50% 62.5%;
+    background-size: cover;
+    filter: contrast(125%) blur(1.5rem);
+  }
+  100% {
+    opacity: 0.4;
+    background-position: 100% 43%;
+    background-size: cover;
+    filter: contrast(175%) blur(0rem);
+  }
+}
+
+@-moz-keyframes load-effect-small {
+  0% {
+    opacity: 0;
+    background-position: 50% 50%;
+    background-size: cover;
+    filter: contrast(125%) blur(1.5rem);
+  }
+  50% {
+    opacity: 0;
+    background-position: 50% 62.5%;
+    background-size: cover;
+    filter: contrast(125%) blur(1.5rem);
+  }
+  100% {
+    opacity: 0.4;
+    background-position: 100% 43%;
+    background-size: cover;
+    filter: contrast(175%) blur(0rem);
+  }
+}
+
+@-webkit-keyframes load-effect-small {
+  0% {
+    opacity: 0;
+    background-position: 50% 50%;
+    background-size: cover;
+    filter: contrast(125%) blur(1.5rem);
+  }
+  50% {
+    opacity: 0;
+    background-position: 50% 62.5%;
+    background-size: cover;
+    filter: contrast(125%) blur(1.5rem);
+  }
+  100% {
+    opacity: 0.4;
+    background-position: 100% 43%;
+    background-size: cover;
+    filter: contrast(175%) blur(0rem);
+  }
+}
+
+@-ms-keyframes load-effect-small {
+  0% {
+    opacity: 0;
+    background-position: 50% 50%;
+    background-size: cover;
+    filter: contrast(125%) blur(1.5rem);
+  }
+  50% {
+    opacity: 0;
+    background-position: 50% 62.5%;
+    background-size: cover;
+    filter: contrast(125%) blur(1.5rem);
+  }
+  100% {
+    opacity: 0.4;
+    background-position: 100% 43%;
+    background-size: cover;
+    filter: contrast(175%) blur(0rem);
+  }
+}
+
 @keyframes fade-in {
   50% {
     opacity: 0;
   }
   100% {
     opacity: 1;
+  }
+}
+
+@-moz-keyframes fade-in {
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fade-in {
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-ms-keyframes fade-in {
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@media only screen and (max-width: 1920px) {
+  .technicalBackground {
+    background-size: cover;
+    animation: contrast-effect 15s infinite linear, load-effect-small 5s linear;
   }
 }

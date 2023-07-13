@@ -18,6 +18,7 @@ canvas {
   min-height: 100%;
   z-index: 1;
   animation: contrast-effect 15s infinite linear, load-effect 5s linear;
+  overflow: hidden;
 
   opacity: 0.6;
   background-position: 50% 75%;
@@ -41,6 +42,18 @@ canvas {
   border: 1px orange dashed;
   border-radius: 50%;
   opacity: 1;
+}
+
+.infoLoad {
+  position: absolute;
+  background-color: black;
+  opacity: 0;
+  background-size: contain;
+  top: 45%;
+  left: 50%;
+  width: 10%;
+  height: 20%;
+  z-index: 1000;
 }
 
 @keyframes rotations {
@@ -123,7 +136,7 @@ canvas {
   100% {
     opacity: 0.4;
     background-position: 50% 75%;
-    background-size: 201%;
+    background-size: 200%;
     filter: contrast(175%) blur(0rem);
   }
 }
@@ -144,7 +157,7 @@ canvas {
   100% {
     opacity: 0.4;
     background-position: 50% 75%;
-    background-size: 201%;
+    background-size: 200%;
     filter: contrast(175%) blur(0rem);
   }
 }
@@ -164,7 +177,7 @@ canvas {
   100% {
     opacity: 0.4;
     background-position: 50% 75%;
-    background-size: 201%;
+    background-size: 200%;
     filter: contrast(175%) blur(0rem);
   }
 }
@@ -184,12 +197,39 @@ canvas {
   100% {
     opacity: 0.4;
     background-position: 50% 75%;
-    background-size: 201%;
+    background-size: 200%;
     filter: contrast(175%) blur(0rem);
   }
 }
 
 @keyframes fade-in {
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes fade-in {
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fade-in {
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-ms-keyframes fade-in {
   50% {
     opacity: 0;
   }

@@ -3,6 +3,7 @@ import { warpEffect } from "../functions/warpEffect";
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Timer } from "../types/timer";
+import { BOX_POSITION } from "../functions/boxPosition";
 
 type EmploymentProps = { interval: number };
 const LOAD_TIME = 350;
@@ -33,7 +34,7 @@ const Employment: React.FunctionComponent<EmploymentProps> = ({ interval }) => {
   React.useEffect(() => {
     const header = document.querySelector("header");
     timer.milliseconds > LOAD_TIME
-      ? (header!.style.zIndex = "10")
+      ? (header!.style.zIndex = "100")
       : (header!.style.zIndex = "0");
   }, [timer.milliseconds]);
   return (
@@ -42,10 +43,10 @@ const Employment: React.FunctionComponent<EmploymentProps> = ({ interval }) => {
 
       <div className="static z-50">
         <div
-          className="absolute flex w-100% md:w-1/2 lg:w-1/2 flex-col rounded-xl bg-slate-400 bg-clip-border text-gray-700 shadow-md z-50"
+          className="absolute flex w-100% sm: w-full md:w-1/2 lg:w-1/2 flex-col rounded-xl bg-slate-400 bg-clip-border text-gray-700 shadow-md z-50"
           style={{
-            left: "40%",
-            top: "20%",
+            left: `${BOX_POSITION(window.innerWidth).left}%`,
+            top: `${BOX_POSITION(window.innerWidth).top}%`,
             opacity: `${
               timer.milliseconds > LOAD_TIME
                 ? (timer.milliseconds - LOAD_TIME) / 50
