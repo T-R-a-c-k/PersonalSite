@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link, NavigateFunction, useNavigate } from "react-router-dom";
 import Styles from "../css/profile.module.css";
-import { changeLetters } from "../functions/changeLetters";
 import Footer from "./footer";
 import Draggable from "react-draggable";
 import { fixRotators } from "../functions/fixRotators";
@@ -12,34 +11,10 @@ import {
   ROTATOR_LINK_DISPLACEMENT_Tablet,
   ROTATOR_LINK_DISPLACEMENT_Tablet_Small,
 } from "../layouts/profileStars";
-import {
-  educationTopMove,
-  educationBottomMove,
-  educationLeftMove,
-  educationRightMove,
-} from "../layouts/educationLoad";
+import { createAnimation } from "../layouts/createAnimation";
 import Loads from "../css/bf2load.module.css";
 
-import {
-  employmentTopMove,
-  employmentBottomMove,
-  employmentLeftMove,
-  employmentRightMove,
-} from "../layouts/employmentLoad";
-
-import {
-  projectsTopMove,
-  projectsBottomMove,
-  projectsLeftMove,
-  projectsRightMove,
-} from "../layouts/projectsLoad";
-
-import {
-  technicalTopMove,
-  technicalBottomMove,
-  technicalLeftMove,
-  technicalRightMove,
-} from "../layouts/technicalLoads";
+import { BarDestination } from "../types/barDestination";
 
 interface ProfileProps {}
 const SCREEN_SIZES = [300, 500, 800, 1023];
@@ -96,7 +71,33 @@ const Profile: React.FunctionComponent<ProfileProps> = () => {
 
   const transition = (e: React.MouseEvent, navigate: NavigateFunction) => {
     e.preventDefault();
+    const divs = document.querySelectorAll("div");
     const target = e.target as HTMLElement;
+    const draggable: Array<HTMLElement> = [].filter.call(
+      divs,
+      (element: HTMLElement) => {
+        return element.className.includes("_barRightImage");
+      }
+    );
+    //The matrix retrieved by this is a string, need to make it an actual int first
+    const draggableMatrix = window
+      .getComputedStyle(draggable[0])
+      .transform.split(",");
+
+    const topOffset = parseInt(
+      draggableMatrix[draggableMatrix.length - 1].replace(/\D/g, "")
+    );
+    const leftOffset = parseInt(
+      draggableMatrix[draggableMatrix.length - 2].replace(/\D/g, "")
+    );
+
+    const barDestination: BarDestination = {
+      top: e.clientY - target.clientHeight / 2 + topOffset,
+      bottom: e.clientY + target.clientHeight / 2 + topOffset,
+      left: e.clientX - target.clientWidth / 2 + leftOffset,
+      right: e.clientX + target.clientWidth / 2 + leftOffset,
+    };
+
     let destination: string;
     if (target.tagName === "P") {
       destination = target.id.replace("_paragraph", "");
@@ -104,7 +105,7 @@ const Profile: React.FunctionComponent<ProfileProps> = () => {
       destination = target.children[0].id.replace("_paragraph", "");
     }
 
-    loadToWarp(destination);
+    loadToWarp(destination, barDestination);
     expandBox();
 
     setTimeout(() => {
@@ -112,17 +113,26 @@ const Profile: React.FunctionComponent<ProfileProps> = () => {
     }, 1500);
   };
 
-  const allowOverflow = () => {
+  const loadToWarp = (destination: string, barPosition: BarDestination) => {
     const divs = document.querySelectorAll("div");
-    const rightBar: Array<HTMLElement> = [].filter.call(
+    const loadBars: Array<HTMLElement> = [].filter.call(
       divs,
       (element: HTMLElement) => {
-        return element.className.includes("_barRight_");
+        return element.className.includes("LoadBar");
       }
     );
-    setTimeout(() => {
-      rightBar[0].style.overflow = "visible";
-    }, 1000);
+
+    const starVacinityBars = createAnimation(barPosition);
+
+    const barTiming = {
+      duration: 2000,
+      iterations: 1,
+    };
+
+    loadBars[0].animate(starVacinityBars[0], barTiming);
+    loadBars[1].animate(starVacinityBars[1], barTiming);
+    loadBars[2].animate(starVacinityBars[2], barTiming);
+    loadBars[3].animate(starVacinityBars[3], barTiming);
   };
 
   const expandBox = () => {
@@ -179,48 +189,17 @@ const Profile: React.FunctionComponent<ProfileProps> = () => {
     allowOverflow();
   };
 
-  const loadToWarp = (destination: string) => {
+  const allowOverflow = () => {
     const divs = document.querySelectorAll("div");
-    const loadBars: Array<HTMLElement> = [].filter.call(
+    const rightBar: Array<HTMLElement> = [].filter.call(
       divs,
       (element: HTMLElement) => {
-        return element.className.includes("LoadBar");
+        return element.className.includes("_barRight_");
       }
     );
-
-    const barTiming = {
-      duration: 2000,
-      iterations: 1,
-    };
-    switch (destination) {
-      case "education":
-        loadBars[0].animate(educationTopMove, barTiming);
-        loadBars[1].animate(educationBottomMove, barTiming);
-        loadBars[2].animate(educationLeftMove, barTiming);
-        loadBars[3].animate(educationRightMove, barTiming);
-        break;
-      case "employment":
-        loadBars[0].animate(employmentTopMove, barTiming);
-        loadBars[1].animate(employmentBottomMove, barTiming);
-        loadBars[2].animate(employmentLeftMove, barTiming);
-        loadBars[3].animate(employmentRightMove, barTiming);
-        break;
-      case "projects":
-        loadBars[0].animate(projectsTopMove, barTiming);
-        loadBars[1].animate(projectsBottomMove, barTiming);
-        loadBars[2].animate(projectsLeftMove, barTiming);
-        loadBars[3].animate(projectsRightMove, barTiming);
-        break;
-      case "technical_skills":
-        loadBars[0].animate(technicalTopMove, barTiming);
-        loadBars[1].animate(technicalBottomMove, barTiming);
-        loadBars[2].animate(technicalLeftMove, barTiming);
-        loadBars[3].animate(technicalRightMove, barTiming);
-        break;
-
-      default:
-        break;
-    }
+    setTimeout(() => {
+      rightBar[0].style.overflow = "visible";
+    }, 1000);
   };
 
   return (
