@@ -7,17 +7,13 @@ import { fixRotators } from "../functions/fixRotators";
 import {
   ROTATOR_LINK_DISPLACEMENT_PC,
   ROTATOR_LINK_DISPLACEMENT_Phone,
-  ROTATOR_LINK_DISPLACEMENT_Phone_Small,
-  ROTATOR_LINK_DISPLACEMENT_Tablet,
-  ROTATOR_LINK_DISPLACEMENT_Tablet_Small,
 } from "../layouts/profileStars";
 import { createAnimation } from "../layouts/createAnimation";
 import Loads from "../css/bf2load.module.css";
-
 import { BarDestination } from "../types/barDestination";
 
 interface ProfileProps {}
-const SCREEN_SIZES = [300, 500, 800, 1023];
+const NON_PC_SCREEN_SIZE = 1023;
 
 const Profile: React.FunctionComponent<ProfileProps> = () => {
   const navigate = useNavigate();
@@ -45,24 +41,9 @@ const Profile: React.FunctionComponent<ProfileProps> = () => {
     window.addEventListener("resize", handleWindowResize);
 
     //Location of the orbits by width of the screen
-    switch (true) {
-      case windowSize[0] < SCREEN_SIZES[0]:
-        fixRotators(ROTATOR_LINK_DISPLACEMENT_Phone_Small);
-        break;
-      case windowSize[0] < SCREEN_SIZES[1]:
-        fixRotators(ROTATOR_LINK_DISPLACEMENT_Phone);
-        break;
-      case windowSize[0] < SCREEN_SIZES[2]:
-        fixRotators(ROTATOR_LINK_DISPLACEMENT_Tablet_Small);
-        break;
-
-      case windowSize[0] < SCREEN_SIZES[3]:
-        fixRotators(ROTATOR_LINK_DISPLACEMENT_Tablet);
-        break;
-
-      default:
-        fixRotators(ROTATOR_LINK_DISPLACEMENT_PC);
-    }
+    windowSize[0] < NON_PC_SCREEN_SIZE
+      ? fixRotators(ROTATOR_LINK_DISPLACEMENT_Phone)
+      : fixRotators(ROTATOR_LINK_DISPLACEMENT_PC);
 
     return () => {
       window.removeEventListener("resize", handleWindowResize);
@@ -79,6 +60,13 @@ const Profile: React.FunctionComponent<ProfileProps> = () => {
         return element.className.includes("_barRightImage");
       }
     );
+
+    const rotators: Array<HTMLElement> = [].filter.call(
+      divs,
+      (element: HTMLElement) => {
+        return element.id.includes("rotator");
+      }
+    );
     //The matrix retrieved by this is a string, need to make it an actual int first
     const draggableMatrix = window
       .getComputedStyle(draggable[0])
@@ -92,10 +80,10 @@ const Profile: React.FunctionComponent<ProfileProps> = () => {
     );
 
     const barDestination: BarDestination = {
-      top: e.clientY - target.clientHeight / 2 + topOffset,
-      bottom: e.clientY + target.clientHeight / 2 + topOffset,
-      left: e.clientX - target.clientWidth / 2 + leftOffset,
-      right: e.clientX + target.clientWidth / 2 + leftOffset,
+      top: e.clientY - rotators[0].clientHeight / 1.5 + topOffset,
+      bottom: e.clientY + rotators[0].clientHeight / 1.5 + topOffset,
+      left: e.clientX - rotators[0].clientWidth / 1.5 + leftOffset,
+      right: e.clientX + rotators[0].clientWidth / 1.5 + leftOffset,
     };
 
     let destination: string;
@@ -105,7 +93,7 @@ const Profile: React.FunctionComponent<ProfileProps> = () => {
       destination = target.children[0].id.replace("_paragraph", "");
     }
 
-    loadToWarp(destination, barDestination);
+    loadToWarp(barDestination);
     expandBox();
 
     setTimeout(() => {
@@ -113,7 +101,7 @@ const Profile: React.FunctionComponent<ProfileProps> = () => {
     }, 1500);
   };
 
-  const loadToWarp = (destination: string, barPosition: BarDestination) => {
+  const loadToWarp = (barPosition: BarDestination) => {
     const divs = document.querySelectorAll("div");
     const loadBars: Array<HTMLElement> = [].filter.call(
       divs,
@@ -212,6 +200,7 @@ const Profile: React.FunctionComponent<ProfileProps> = () => {
             cancel="a"
           >
             <div className={Styles.barRightImage}>
+              <div className={Styles.backgroundImage}></div>
               <div className={Loads.topLoadBar}></div>
               <div className={Loads.bottomLoadBar}></div>
               <div className={Loads.leftLoadBar}></div>

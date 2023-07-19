@@ -106,3 +106,23 @@
     transform: rotate(360deg);
   }
 }
+/* Media Query for Mobile Devices */
+@media (max-width: 1023px) {
+  .barRightImage {
+    left: 0%;
+    height: auto;
+    width: auto;
+    background-position: none;
+  }
+  ::-webkit-scrollbar {
+    width: 0px;
+    background: transparent; /* make scrollbar transparent */
+  }
+  #rotator {
+    width: 20vw;
+    height: 20vw;
+  }
+  #rotator > p {
+    font-size: 4vw;
+  }
+}
